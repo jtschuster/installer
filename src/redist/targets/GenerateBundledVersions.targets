@@ -449,6 +449,11 @@ Copyright (c) .NET Foundation. All rights reserved.
     @(ImplicitPackageVariable->'<ImplicitPackageReferenceVersion Include="%(Identity)" TargetFrameworkVersion="%(TargetFrameworkVersion)" DefaultVersion="%(DefaultVersion)" LatestVersion="%(LatestVersion)"/>', '
     ')
 
+    <!-- .NET 9.0 -->
+    <KnownWebAssemblySdkPack Include="Microsoft.NET.Sdk.WebAssembly.Pack"
+                             TargetFramework="net9.0"
+                             WebAssemblySdkPackVersion="$(MicrosoftNETCoreAppRuntimePackageVersion)" />
+
     <!-- .NET 8.0 -->
     <KnownFrameworkReference Include="Microsoft.NETCore.App"
                               TargetFramework="net8.0"
