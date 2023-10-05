@@ -6,6 +6,10 @@ This requires work to happen in nearly every part of the product.  This document
 
 ## aspnetcore
 
+- Version: https://github.com/dotnet/aspnetcore/commit/ea3bef8867a5cdcd2500e266f945937fe64b8b7b
+- Target Framework: https://github.com/dotnet/aspnetcore/commit/8279d3f8ee47d5e249ef12a99e4d1cacfd5209ec
+- Doc: https://github.com/dotnet/aspnetcore/blob/main/docs/UpdatingMajorVersionAndTFM.md
+
 ## cecil
 
 ## command-line-api
