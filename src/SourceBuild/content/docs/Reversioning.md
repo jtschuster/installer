@@ -33,8 +33,9 @@ This requires work to happen in nearly every part of the product.  This document
 ## roslyn
 
 ## runtime
-Version : https://github.com/dotnet/runtime/pull/90558
-TargetFramework : https://github.com/dotnet/runtime/pull/90880
+
+- Version : https://github.com/dotnet/runtime/pull/90558
+- TargetFramework : https://github.com/dotnet/runtime/pull/90880
 
 ## scenario-tests
 
