@@ -26,6 +26,8 @@ This requires work to happen in nearly every part of the product.  This document
 
 ## installer
 
+- Dependency version updates - Need to update some dependency names when swtiching major versions: https://github.com/dotnet/installer/compare/e61a63264b5d791f943c559532a7f3306401a964...6db2bc24eb615b91cd2a247ff7d5013b0d2f4373
+
 ## msbuild
 
 ## nuget-client
@@ -43,11 +45,20 @@ This requires work to happen in nearly every part of the product.  This document
 
 ## scenario-tests
 
+- Version: https://github.com/dotnet/scenario-tests/commit/4535d2e17440e343a5ccb54d140673e0779fce28
+
 ## sdk
+
+- Dependency name updates
+  - https://github.com/dotnet/sdk/commit/4e8a9d5e7a06757b23d01e564090fe2eff9b65b1
 
 ## source-build-externals
 
+- Versioning: https://github.com/dotnet/source-build-externals/pull/208
+
 ## source-build-reference-packages
+
+- Versioning: https://github.com/dotnet/source-build-reference-packages/pull/781
 
 ## sourcelink
 
@@ -56,6 +67,20 @@ This requires work to happen in nearly every part of the product.  This document
 ## templating
 
 ## test-templates
+
+## winforms
+
+- Dependency name updates: https://github.com/dotnet/winforms/pull/9865
+
+## wpf
+
+- Dependency name updates: https://github.com/dotnet/wpf/pull/8196
+- Versioning: https://github.com/dotnet/wpf/pull/8099
+
+## windowsdesktop
+
+- Target Framework/WPF dependency update: https://github.com/dotnet/windowsdesktop/pull/3840
+- Version: https://github.com/dotnet/windowsdesktop/pull/3791
 
 ## vstest
 
