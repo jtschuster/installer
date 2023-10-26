@@ -49,13 +49,21 @@ This requires work to happen in nearly every part of the product.  This document
 
 ## sdk
 [Installer Branding](https://github.com/dotnet/installer/pull/17194)
+
 [Installer table](https://github.com/dotnet/installer/pull/17224)
+
 [.NET9 runtime and KnownFrameworkReferences](https://github.com/dotnet/installer/pull/17433)
+
 [Target the SDK at .net 9 using installer build from 17433 above](https://github.com/dotnet/sdk/pull/35031)
+
 [Update default templates to target .NET9](https://github.com/dotnet/sdk/pull/34996)
+
 [Update stage 0 installer to unwind some of the temporary changes](https://github.com/dotnet/installer/pull/17617)
+
 [Update stage 0 SDK to unwind some of the temporary changes](https://github.com/dotnet/sdk/pull/36437)
+
 [List of items in the sdk and installer to unwind](https://github.com/dotnet/installer/issues/17453)
+
 - Dependency name updates
   - https://github.com/dotnet/sdk/commit/4e8a9d5e7a06757b23d01e564090fe2eff9b65b1
 
