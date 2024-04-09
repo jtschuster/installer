@@ -12,7 +12,7 @@ using Microsoft.Extensions.FileSystemGlobbing;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Microsoft.DotNet.SourceBuild.SmokeTests
+namespace Microsoft.DotNet.UnifiedBuild.BaselineComparison.Tests
 {
     internal class BaselineHelper
     {
@@ -41,9 +41,9 @@ namespace Microsoft.DotNet.SourceBuild.SmokeTests
             Assert.Null(message);
         }
 
-        public static void CompareBaselineContents(string baselineFileName, string actualContents, ITestOutputHelper outputHelper, bool warnOnDiffs = false, string baselineSubDir = "")
+        public static void CompareBaselineContents(string baselineFileName, string actualContents, string logsDirectory, ITestOutputHelper outputHelper, bool warnOnDiffs = false, string baselineSubDir = "")
         {
-            string actualFilePath = Path.Combine(TestBase.LogsDirectory, $"Updated{baselineFileName}");
+            string actualFilePath = Path.Combine(logsDirectory, $"Updated{baselineFileName}");
             if (!actualContents.EndsWith(Environment.NewLine))
                 actualContents += Environment.NewLine;
             File.WriteAllText(actualFilePath, actualContents);
@@ -53,6 +53,10 @@ namespace Microsoft.DotNet.SourceBuild.SmokeTests
 
         public static void CompareFiles(string expectedFilePath, string actualFilePath, ITestOutputHelper outputHelper, bool warnOnDiffs = false)
         {
+            if (!File.Exists(expectedFilePath))
+            {
+                throw new InvalidOperationException($"Missing baseline file '{expectedFilePath}'");
+            }
             string baselineFileText = File.ReadAllText(expectedFilePath).Trim();
             string actualFileText = File.ReadAllText(actualFilePath).Trim();
 
