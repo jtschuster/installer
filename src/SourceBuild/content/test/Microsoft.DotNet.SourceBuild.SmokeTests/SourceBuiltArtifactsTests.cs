@@ -17,7 +17,7 @@ namespace Microsoft.DotNet.SourceBuild.SmokeTests;
 public class SourceBuiltArtifactsTests : SdkTests
 {
     public static bool IncludeSourceBuiltArtifactsTests => !string.IsNullOrWhiteSpace(Config.SourceBuiltArtifactsPath);
-
+    
     public SourceBuiltArtifactsTests(ITestOutputHelper outputHelper) : base(outputHelper) { }
 
     [ConditionalFact(typeof(SourceBuiltArtifactsTests), nameof(IncludeSourceBuiltArtifactsTests))]
@@ -30,7 +30,7 @@ public class SourceBuiltArtifactsTests : SdkTests
         try
         {
             // Extract the .version file
-            Utilities.ExtractTarball(Config.SourceBuiltArtifactsPath!, outputDir, ".version");
+            Utilities.ExtractTarball(Config.SourceBuiltArtifactsPath, outputDir, ".version");
 
             string[] versionLines = File.ReadAllLines(Path.Combine(outputDir, ".version"));
             Assert.Equal(2, versionLines.Length);
@@ -52,10 +52,11 @@ public class SourceBuiltArtifactsTests : SdkTests
             }
 
             // Verify the SDK version
+
             string sdkVersion = versionLines[1];
 
             // Find the expected SDK version by getting it from the SDK tarball
-            Utilities.ExtractTarball(Config.SdkTarballPath, outputDir, "./sdk/*/.version");
+            Utilities.ExtractTarball(Config.SdkTarballPath ?? string.Empty, outputDir, "./sdk/*/.version");
             DirectoryInfo sdkDir = new DirectoryInfo(Path.Combine(outputDir, "sdk"));
             string sdkVersionPath = sdkDir.GetFiles(".version", SearchOption.AllDirectories).Single().FullName;
             string[] sdkVersionLines = File.ReadAllLines(Path.Combine(outputDir, sdkVersionPath));
