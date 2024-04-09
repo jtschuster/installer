@@ -17,12 +17,14 @@ namespace Microsoft.DotNet.SourceBuild.SmokeTests;
 public class SourceBuiltArtifactsTests : SdkTests
 {
     public static bool IncludeSourceBuiltArtifactsTests => !string.IsNullOrWhiteSpace(Config.SourceBuiltArtifactsPath);
-    
+
     public SourceBuiltArtifactsTests(ITestOutputHelper outputHelper) : base(outputHelper) { }
 
     [ConditionalFact(typeof(SourceBuiltArtifactsTests), nameof(IncludeSourceBuiltArtifactsTests))]
     public void VerifyVersionFile()
     {
+        Assert.NotNull(Config.SourceBuiltArtifactsPath);
+
         string outputDir = Path.Combine(Directory.GetCurrentDirectory(), "sourcebuilt-artifacts");
         Directory.CreateDirectory(outputDir);
         try
