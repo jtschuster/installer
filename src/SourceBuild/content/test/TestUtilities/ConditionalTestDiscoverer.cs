@@ -122,7 +122,7 @@ internal static class ConditionalTestDiscoverer
             $"The conditional method needs to be a static method, property, or field on the type {type} or any ancestor, " +
             "of any visibility, accepting zero arguments, and having a return type of Boolean.";
     }
-
+    
     internal static Func<bool> LookupConditionalMember(Type t, string name)
     {
         if (t == null || name == null)
